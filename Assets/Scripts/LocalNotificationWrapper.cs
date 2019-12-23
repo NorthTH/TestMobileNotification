@@ -52,8 +52,6 @@ namespace LocalNotificationManager
 #endif
 
 #if UNITY_IOS
-
-
             m_iOSNotification = new iOSNotification()
             {
                 Title = title,
@@ -110,7 +108,8 @@ namespace LocalNotificationManager
 #endif
 
 #if UNITY_IOS
-            iOSNotificationCenter.RemoveScheduledNotifications(m_iOSNotification.Identifier);
+            if(m_iOSNotification != null)
+                iOSNotificationCenter.RemoveScheduledNotification(m_iOSNotification.Identifier);
 #endif
         }
 
