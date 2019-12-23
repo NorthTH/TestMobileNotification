@@ -32,4 +32,11 @@ public class NotificationsManager : MonoBehaviour
             localNotificationWrapper.RemoveAllDisplayedNotifications();
         }
     }
+
+    private　void OnApplicationFocus()
+    {
+#if UNITY_IOS
+        localNotificationWrapper.ClearNotificationsBadge();
+#endif
+    }
 }

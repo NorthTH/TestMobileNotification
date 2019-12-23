@@ -123,5 +123,12 @@ namespace LocalNotificationManager
             iOSNotificationCenter.RemoveAllDeliveredNotifications();
 #endif
         }
+
+        public void ClearNotificationsBadge()
+        {
+#if UNITY_IOS
+            iOSNotificationCenter.ApplicationBadge = 0;
+#endif
+        }
     }
 }
